@@ -1,7 +1,6 @@
-import ShowMsg from '../../components/ShowMsg';
-
 const initState = {
   pickedColor: '',
+  showMsgs: false,
 };
 
 const colorReducer = (state = initState, action) => {
@@ -13,11 +12,10 @@ const colorReducer = (state = initState, action) => {
       };
 
     case 'COPY':
-      console.log(state.pickedColor);
-      <ShowMsg msg='copied' type='suc' />;
       return {
         ...state,
         copy: navigator.clipboard.writeText(state.pickedColor),
+        showMsgs: true,
       };
 
     default:

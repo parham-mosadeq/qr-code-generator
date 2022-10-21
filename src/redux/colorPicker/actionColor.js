@@ -6,7 +6,6 @@ const pickColor = (e) => {
 };
 
 const copy = () => {
-  console.log(1244);
   return {
     type: 'COPY',
   };
