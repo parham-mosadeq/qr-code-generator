@@ -1,3 +1,5 @@
+import { notify } from "../../functions/functions";
+
 const pickColor = (e) => {
   return {
     type: 'PICK_COLOR',
@@ -6,6 +8,7 @@ const pickColor = (e) => {
 };
 
 const copy = () => {
+  // notify('copied')
   return {
     type: 'COPY',
   };

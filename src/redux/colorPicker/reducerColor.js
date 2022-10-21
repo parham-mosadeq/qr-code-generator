@@ -1,6 +1,8 @@
+import { notify } from '../../functions/functions';
+
 const initState = {
   pickedColor: '',
-  showMsgs: false,
+  copy: '#000',
 };
 
 const colorReducer = (state = initState, action) => {
@@ -12,10 +14,10 @@ const colorReducer = (state = initState, action) => {
       };
 
     case 'COPY':
+      notify('copied', 'success');
       return {
         ...state,
         copy: navigator.clipboard.writeText(state.pickedColor),
-        showMsgs: true,
       };
 
     default:

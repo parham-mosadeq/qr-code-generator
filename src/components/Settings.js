@@ -1,6 +1,10 @@
 import React from 'react';
 // modal
-import ShowMsg from './ShowMsg';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// styles
+// import styles from '../styles/showMsg.module.css';
 //  qr library
 import Qrcode from './Qrcode';
 // state and dispatch hooks
@@ -32,12 +36,9 @@ const Settings = () => {
 
   // ! copy actions and states start
   const pickedColor = useSelector((state) => state.colorReducer.pickedColor);
-  const msg = useSelector((state) => state.colorReducer.showMsgs);
   // ! copy actions and states end
-  console.log(msg);
   return (
     <main>
-      {msg ? <ShowMsg msg={'copied'} type={'suc'} /> : null}
       <article>
         <input
           type='text'
@@ -126,10 +127,17 @@ const Settings = () => {
         </div>
       </div>
 
-      <button onClick={() => dispatch(generate())}>generate</button>
+      <button
+        onClick={() => {
+          dispatch(generate());
+        }}
+      >
+        generate
+      </button>
       <article>
         <Qrcode />
       </article>
+      <ToastContainer />
     </main>
   );
 };
