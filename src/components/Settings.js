@@ -100,10 +100,18 @@ const Settings = () => {
               <option value='level' hidden defaultValue>
                 level
               </option>
-              <option className={styles.opt} value='L'>L</option>
-              <option className={styles.opt} value='M'>M</option>
-              <option className={styles.opt} value='Q'>Q</option>
-              <option className={styles.opt} value='H'>H</option>
+              <option className={styles.opt} value='L'>
+                L
+              </option>
+              <option className={styles.opt} value='M'>
+                M
+              </option>
+              <option className={styles.opt} value='Q'>
+                Q
+              </option>
+              <option className={styles.opt} value='H'>
+                H
+              </option>
             </select>
           </div>
           {/* level end */}
@@ -127,24 +135,21 @@ const Settings = () => {
         <div>
           <label> pick a color here!</label>
           <input
-            className={styles.settingsInput}
+            className={(styles.settingsInput, styles.colorPicker)}
             value={pickedColor}
             onChange={(e) => dispatch(pickColor(e))}
             type='color'
           />
         </div>
         <div>
-          <button
-          
-          className={styles.btn}
-          onClick={() => dispatch(copy())}>copy!</button>
+          <button className={styles.btn} onClick={() => dispatch(copy())}>
+            copy!
+          </button>
         </div>
       </div>
 
       <button
-
-className={styles.btn}
-
+        className={styles.btn}
         onClick={() => {
           dispatch(generate());
         }}
