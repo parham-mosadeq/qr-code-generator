@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // styles
-// import styles from '../styles/showMsg.module.css';
+import styles from '../styles/settings.module.css';
 //  qr library
 import Qrcode from './Qrcode';
 // state and dispatch hooks
@@ -38,9 +38,10 @@ const Settings = () => {
   const pickedColor = useSelector((state) => state.colorReducer.pickedColor);
   // ! copy actions and states end
   return (
-    <main>
-      <article>
+    <main className={styles.main}>
+      <article className={styles.article}>
         <input
+          className={styles.linkInput}
           type='text'
           placeholder='enter your link'
           value={valueState}
@@ -48,22 +49,26 @@ const Settings = () => {
         />
 
         {/* user setting start */}
-        <div>
+        <div className={styles.userSettings}>
           {/* bg color start */}
-          <div>
+          <div className={styles.mainInputs}>
             <label> background color:</label>
             <input
+              className={styles.settingsInput}
               type='text'
               value={bgColorState}
+              placeholder={'exg: #000, black'}
               onChange={(e) => dispatch(bgColor(e))}
             />
           </div>
           {/* bg color end */}
           {/* fg color start */}
-          <div>
+          <div className={styles.mainInputs}>
             <label> line color:</label>
             <input
+              className={styles.settingsInput}
               type='text'
+              placeholder={'exg: #000, black'}
               value={fgColorState}
               onChange={(e) => dispatch(fgColor(e))}
             />
@@ -71,9 +76,10 @@ const Settings = () => {
           {/* fg color end */}
 
           {/* size of the corners start */}
-          <div>
+          <div className={styles.mainInputs}>
             <label> size:</label>
             <input
+              className={styles.settingsInput}
               value={sizeState}
               onChange={(e) => dispatch(size(e))}
               type='number'
@@ -85,23 +91,27 @@ const Settings = () => {
           {/* size of the corners end */}
 
           {/* level start */}
-          <div>
+          <div className={styles.mainInputs}>
             <label> level:</label>
-            <select onChange={(e) => dispatch(level(e))}>
+            <select
+              className={styles.settingsInput}
+              onChange={(e) => dispatch(level(e))}
+            >
               <option value='level' hidden defaultValue>
                 level
               </option>
-              <option value='L'>L</option>
-              <option value='M'>M</option>
-              <option value='Q'>Q</option>
-              <option value='H'>H</option>
+              <option className={styles.opt} value='L'>L</option>
+              <option className={styles.opt} value='M'>M</option>
+              <option className={styles.opt} value='Q'>Q</option>
+              <option className={styles.opt} value='H'>H</option>
             </select>
           </div>
           {/* level end */}
           {/* title start */}
-          <div>
-            <label>title</label>
+          <div className={styles.mainInputs}>
+            <label>title:</label>
             <input
+              className={styles.settingsInput}
               value={titleState}
               onChange={(e) => dispatch(title(e))}
               type='text'
@@ -115,19 +125,26 @@ const Settings = () => {
 
       <div>
         <div>
-          <label htmlFor=''>you can pick a color here!</label>
+          <label> pick a color here!</label>
           <input
+            className={styles.settingsInput}
             value={pickedColor}
             onChange={(e) => dispatch(pickColor(e))}
             type='color'
           />
         </div>
         <div>
-          <button onClick={() => dispatch(copy())}>copy!</button>
+          <button
+          
+          className={styles.btn}
+          onClick={() => dispatch(copy())}>copy!</button>
         </div>
       </div>
 
       <button
+
+className={styles.btn}
+
         onClick={() => {
           dispatch(generate());
         }}

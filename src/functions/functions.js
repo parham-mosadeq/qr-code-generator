@@ -26,4 +26,6 @@ const notify = (txt, type) => {
   }
 };
 
-export { notify };
+ 
+
+export { notify,   };

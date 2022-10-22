@@ -1,0 +1,89 @@
+.main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  font-family: inherit;
+}
+
+.article {
+  padding: 14px 10px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.linkInput {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+  text-transform: capitalize;
+  color: gray;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+  transition: box-shadow 0.3s linear;
+}
+
+.linkInput:focus {
+  box-shadow: 0 -10px 5px rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+
+.userSettings {
+  text-align: center;
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.mainInputs {
+  margin: 1rem 0;
+  max-width: 500;
+}
+
+.settingsInput {
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  text-align: center;
+  padding: 5px;
+  margin-top: 8px;
+  text-transform: capitalize;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+  transition: box-shadow 0.3s linear;
+}
+
+.settingsInput:focus {
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+
+.opt {
+  background-color: #eee;
+}
+
+.btn {
+  display: block;
+  margin: 1rem auto;
+  border: 0;
+  padding: 9px 18px;
+  text-transform: uppercase;
+  background-color: rgb(123, 66, 185);
+  color: #fff;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.btn:hover{
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.2);
+
+}
