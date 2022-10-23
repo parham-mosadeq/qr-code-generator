@@ -26,6 +26,14 @@ const notify = (txt, type) => {
   }
 };
 
- 
+const isGreater = (num) => {
+  const maxNum = 250;
 
-export { notify,   };
+  if (num > maxNum) {
+    return (num = maxNum);
+  }
+
+  return num;
+};
+
+export { notify, isGreater };

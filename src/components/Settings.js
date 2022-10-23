@@ -5,11 +5,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // styles
 import styles from '../styles/settings.module.css';
-//  qr library
+//  components
 import Qrcode from './Qrcode';
 // state and dispatch hooks
 import { useDispatch, useSelector } from 'react-redux';
-//
+// redux
 import { copy, pickColor } from '../redux/colorPicker/actionColor';
 // functions
 import {
@@ -38,8 +38,11 @@ const Settings = () => {
   const pickedColor = useSelector((state) => state.colorReducer.pickedColor);
   // ! copy actions and states end
   return (
+    // main start
     <main className={styles.main}>
+      {/* article start */}
       <article className={styles.article}>
+        {/* getting url from user */}
         <input
           className={styles.linkInput}
           type='text'
@@ -130,7 +133,7 @@ const Settings = () => {
         </div>
         {/* user setting end */}
       </article>
-
+      {/* article end */}
       <div>
         <div>
           <label> pick a color here!</label>
@@ -159,8 +162,10 @@ const Settings = () => {
       <article>
         <Qrcode />
       </article>
+      {/* toastify */}
       <ToastContainer />
     </main>
+    // main end
   );
 };
 

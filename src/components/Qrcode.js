@@ -1,9 +1,15 @@
-import QRCode from 'react-qr-code';
-
 import React from 'react';
+// qrcode 
+import QRCode from 'react-qr-code';
+// style
+import styles from '../styles/qrcode.module.css';
+// redux
 import { useSelector } from 'react-redux';
+// function
+import { isGreater } from '../functions/functions';
 
 const Qrcode = () => {
+  // reading states from store
   const sizeState = useSelector((state) => state.settingsReducer.sizeState);
   const titleState = useSelector((state) => state.settingsReducer.titleState);
   const valueState = useSelector((state) => state.settingsReducer.valueState);
@@ -16,20 +22,22 @@ const Qrcode = () => {
   );
 
   return (
-    <div>
-      <div>
+    <main className={styles.container}>
+      <article>
         {generate ? (
           <QRCode
-            size={+sizeState}
+          className={styles.QRCode}
+          // checking for max number 
+            size={isGreater(+sizeState)}
+            // setting default values
             bgColor={bgColorState || '#fff'}
             fgColor={fgColorState || '#000'}
-            // style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
             value={valueState}
             title={titleState}
           />
         ) : null}
-      </div>
-    </div>
+      </article>
+    </main>
   );
 };
 
