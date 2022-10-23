@@ -6,7 +6,7 @@ import styles from '../styles/qrcode.module.css';
 // redux
 import { useSelector } from 'react-redux';
 // function
-import { isGreater } from '../functions/functions';
+import { isGrater } from '../functions/functions';
 
 const Qrcode = () => {
   // reading states from store
@@ -28,7 +28,7 @@ const Qrcode = () => {
           <QRCode
           className={styles.QRCode}
           // checking for max number 
-            size={isGreater(+sizeState)}
+            size={isGrater(+sizeState)}
             // setting default values
             bgColor={bgColorState || '#fff'}
             fgColor={fgColorState || '#000'}

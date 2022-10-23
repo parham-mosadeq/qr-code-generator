@@ -26,7 +26,7 @@ const notify = (txt, type) => {
   }
 };
 
-const isGreater = (num) => {
+const isGrater = (num) => {
   const maxNum = 250;
 
   if (num > maxNum) {
@@ -36,4 +36,4 @@ const isGreater = (num) => {
   return num;
 };
 
-export { notify, isGreater };
+export { notify, isGrater };
